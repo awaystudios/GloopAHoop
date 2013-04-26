@@ -1,0 +1,76 @@
+BUTTON_RADIUS                 60
+
+CANNON_BARREL_H               125
+CANNON_BARREL_W               60
+CANNON_BARREL_X               -30
+CANNON_BARREL_Y               -30
+CANNON_BASE_H                 110
+CANNON_BASE_W                 30
+CANNON_BASE_X                 -20
+CANNON_BASE_Y                 -35
+CANNON_PHYSICS_DELAY          16    # the time to wait before enabling gloop/cannon collisions after launching, in updates
+
+FAN_AREA_HEIGHT               200
+FAN_AREA_WIDTH                100
+FAN_BODY_HEIGHT               5
+FAN_BODY_WIDTH                50
+FAN_ON_OFF_TIME               0.4
+FAN_POWER                     0.027
+
+GLOOP_ANGULAR_DAMPING         2
+GLOOP_DECAL_LIMIT_PER_HIT     20
+GLOOP_DECAL_LIMIT_TOTAL       30
+GLOOP_DECAL_MIN_SPEED         0.01
+GLOOP_DECAL_SPEED_FACTOR      2
+GLOOP_FRICTION                0.5
+GLOOP_LINEAR_DAMPING          0.1
+GLOOP_LOST_MOMENTUM_THRESHOLD 0.01
+GLOOP_MAX_SPEED               8.5
+GLOOP_MOMENTUM_MULTIPLIER     0.1    # values closer to one makes the average move faster
+GLOOP_RADIUS                  16
+GLOOP_RESTITUTION             0.45
+GLOOP_SPLAT_COOLDOWN          20    # delay between splats while on a surface, in updates
+
+GOALWALL_BULLSEYE_THRESHOLD   0.2    # the threshold to be under to score a bullseye (0-1) lower is smaller
+GOALWALL_DETECTOR_HEIGHT      100
+GOALWALL_DETECTOR_WIDTH       0
+
+GRID_SIZE                     100
+
+HOOP_ROTATION_STEP            45
+
+INPUT_CLICK_TIME              250    # the maximum time in milliseconds between down and up events to consider the input a click
+INPUT_DRAG_THRESHOLD_SQUARED  100    # the maximum distance the player needs to drag before the actual drag events happen (also disables clicking)
+INPUT_PICK_DISTANCE           100    # the maximum distance a hoops centerpoint can be from the click to be considered hit
+
+LAUNCHER_DRAG_MAX             120     # the drag distance is capped to this value, dragging longer won't make a difference
+LAUNCHER_DRAG_MIN             70      # dragging a distance shorter than this cancels the launch
+LAUNCHER_POWER_BASE           0.7     # the value remaining is scaled by this multiplier before being applied to gloop
+LAUNCHER_POWER_VARIATION      1.3
+
+PHYSICS_GRAVITY_Y             2
+PHYSICS_POSITION_ITERATIONS   2
+PHYSICS_SCALE                 60
+PHYSICS_TIME_STEP             0.05
+PHYSICS_VELOCITY_ITERATIONS   4
+
+ROCKET_POWER                  100.8
+
+SCORE_BULLSEYE_MULTIPLIER     2
+SCORE_STAR_VALUE              350
+
+SHOW_COLLISION_WALLS          false
+SHOW_COSMETIC_MESHES          true
+
+STAR_RADIUS                   30
+
+TRACE_MAX_SCALE               0.7
+TRACE_MIN_DPOS_SQUARED        100
+TRACE_MIN_DTIME               1
+TRACE_MIN_SCALE               0.3
+TRACE_NUM_POINTS              200
+
+BOX_SIZE                      90
+BOX_DENSITY                   0.1
+
+TRAMPOLINE_RESTITUTION        1.25
