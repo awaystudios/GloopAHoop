@@ -1,7 +1,7 @@
 package
 {
-	import com.awaystudios.invawayders.*;
-	import com.awaystudios.invawayders.utils.*;
+	import com.awaystudios.gloopahoop.*;
+	import com.awaystudios.gloopahoop.utils.*;
 	
 	import flash.display.*;
 	

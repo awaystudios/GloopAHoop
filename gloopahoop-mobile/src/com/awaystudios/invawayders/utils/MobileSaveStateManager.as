@@ -1,6 +1,7 @@
 package com.awaystudios.invawayders.utils
 {
 	import flash.filesystem.*;
+	import com.awaystudios.gloopahoop.utils.SaveStateManager;
 
 	public class MobileSaveStateManager extends SaveStateManager
 	{
