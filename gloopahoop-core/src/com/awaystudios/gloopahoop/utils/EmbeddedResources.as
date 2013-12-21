@@ -52,7 +52,7 @@ package com.awaystudios.gloopahoop.utils
 
 
 		// Boxes
-		[Embed("/../resources/props/box/box.3ds", mimeType="application/octet-stream")]
+		[Embed("/../resources/props/box/box.awd", mimeType="application/octet-stream")]
 		public static var Box3DSAsset : Class;
 
 		[Embed("/../resources/props/box/BOX-DM.png")]
