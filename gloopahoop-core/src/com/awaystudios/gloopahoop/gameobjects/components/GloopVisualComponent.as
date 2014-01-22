@@ -156,7 +156,7 @@ package com.awaystudios.gloopahoop.gameobjects.components
 			_stdMesh.visible = false;
 			_splatMesh.visible = true;
 			
-			_splatAnim.play('splat');
+			_splatAnim.play('splat', 0);
 			
 			_splatAngle = 180-angle;
 			_splatting = true;

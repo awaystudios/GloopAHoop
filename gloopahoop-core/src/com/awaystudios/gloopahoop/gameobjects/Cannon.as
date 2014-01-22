@@ -135,7 +135,7 @@ package com.awaystudios.gloopahoop.gameobjects
 		
 		public function onDragEnd(mouseX:Number, mouseY:Number):void {
 			if (_launcher.gloop && _launcher.shotPowerAboveThreshold) {
-				_animComponent.play('fire');
+				_animComponent.play('fire', 0);
 				
 				// TODO: Solve this in a nicer way, or at least make sure
 				// it can't happen twice in parallel?

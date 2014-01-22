@@ -122,7 +122,7 @@ package com.awaystudios.gloopahoop.screens
 			animator = cannonBody.animator as VertexAnimator;
 
 			_scene.addChild( cannonBody );
-			cannonAnimation.play( 'fire' );
+			cannonAnimation.play( 'fire', 0 );
 		}
 
 		public var smileMat:TextureMaterial;

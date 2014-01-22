@@ -25,9 +25,9 @@ package com.awaystudios.gloopahoop.gameobjects.components
 		}
 		
 		
-		public function play(sequenceName : String) : void
+		public function play(sequenceName : String, offset:Number = NaN) : void
 		{
-			_animator.play(sequenceName);
+			_animator.play(sequenceName, null, offset);
 		}
 		
 		public function stop() : void

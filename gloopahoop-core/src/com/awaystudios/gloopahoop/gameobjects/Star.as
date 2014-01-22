@@ -55,7 +55,7 @@ package com.awaystudios.gloopahoop.gameobjects
 				Geometry(AssetLibrary.getAsset('StarFrame3_geom')),
 				Geometry(AssetLibrary.getAsset('StarFrame4_geom')),
 			], 600);
-			_animComponent.play('seq');
+			_animComponent.play('seq', 0);
 
 		}
 		
