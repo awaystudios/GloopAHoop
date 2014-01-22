@@ -26,10 +26,13 @@ package com.awaystudios.gloopahoop
 	import flash.display.*;
 	import flash.events.*;
 	import flash.system.*;
-	import flash.utils.*;
 	
 	public class GameContainer extends Sprite
 	{
+		private var _awdParser:AWDParser = new AWDParser();
+		
+		private var _3dsParser:Max3DSParser = new Max3DSParser(false);
+		
 		//engine variables
 		private var _view : View3D;
 		
@@ -106,22 +109,21 @@ package com.awaystudios.gloopahoop
 		private function initAssets() : void
 		{
 			AssetLibrary.enableParser( AWD2Parser );
-			AssetLibrary.enableParser( Max3DSParser );
 			
 			_stack.gotoScreen(Screens.LOADING);
 			
 			_queue = new AssetLoaderQueue();
 			
-			_queue.addResource(EmbeddedResources.FlyingAWDAsset);
-			_queue.addResource(EmbeddedResources.GloopSplat3DSAsset);
-			_queue.addResource(EmbeddedResources.Cannon3DSAsset);
-			_queue.addResource(EmbeddedResources.Fan3DSAsset);
-			_queue.addResource(EmbeddedResources.Button3DSAsset);
-			_queue.addResource(EmbeddedResources.Target3DSAsset);
-			_queue.addResource(EmbeddedResources.Star3DSAsset);
-			_queue.addResource(EmbeddedResources.Hoop3DSAsset);
-			_queue.addResource(EmbeddedResources.Box3DSAsset);
-			_queue.addResource(EmbeddedResources.Monitor3DSAsset);
+			_queue.addResource(EmbeddedResources.FlyingAWDAsset, _awdParser);
+			_queue.addResource(EmbeddedResources.GloopSplat3DSAsset, _3dsParser);
+			_queue.addResource(EmbeddedResources.Cannon3DSAsset, _3dsParser);
+			_queue.addResource(EmbeddedResources.Fan3DSAsset, _3dsParser);
+			_queue.addResource(EmbeddedResources.Button3DSAsset, _3dsParser);
+			_queue.addResource(EmbeddedResources.Target3DSAsset, _3dsParser);
+			_queue.addResource(EmbeddedResources.Star3DSAsset, _3dsParser);
+			_queue.addResource(EmbeddedResources.Hoop3DSAsset, _3dsParser);
+			_queue.addResource(EmbeddedResources.Box3DSAsset, _3dsParser);
+			_queue.addResource(EmbeddedResources.Monitor3DSAsset, _3dsParser);
 			_queue.addEventListener(Event.COMPLETE, onAssetsComplete);
 			_queue.load();
 		}

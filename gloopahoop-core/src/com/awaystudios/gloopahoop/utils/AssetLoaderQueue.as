@@ -6,25 +6,26 @@ package com.awaystudios.gloopahoop.utils
 	import away3d.events.*;
 	import away3d.library.*;
 	import away3d.loaders.misc.*;
+	import away3d.loaders.parsers.*;
 	
 	import flash.events.*;
 	
 	public class AssetLoaderQueue extends EventDispatcher
 	{
-		private var _resources : Vector.<Class>;
+		private var _resources : Vector.<Resource>;
 		private var _nextResIdx : uint;
 		private var _context:AssetLoaderContext = new AssetLoaderContext(false);
 		public function AssetLoaderQueue()
 		{
 			super();
 			
-			_resources = new Vector.<Class>();
+			_resources = new Vector.<Resource>();
 		}
 		
 		
-		public function addResource(cls : Class) : void
+		public function addResource(cls : Class, parser:ParserBase) : void
 		{
-			_resources.push(cls);
+			_resources.push(new Resource(new cls(), parser));
 		}
 		
 		
@@ -47,7 +48,8 @@ package com.awaystudios.gloopahoop.utils
 		{
 			trace(_nextResIdx);
 			if (_nextResIdx < _resources.length) {
-				AssetLibrary.loadData(_resources[_nextResIdx++], _context);
+				var resource:Resource = _resources[_nextResIdx++];
+				AssetLibrary.loadData(resource.data, _context, null, resource.parser);
 			}
 			else {
 				AssetLibrary.removeEventListener(LoaderEvent.RESOURCE_COMPLETE, onResourceComplete);
@@ -60,5 +62,23 @@ package com.awaystudios.gloopahoop.utils
 		{
 			loadNext();
 		}
+	}
+}
+
+
+
+import away3d.loaders.parsers.*;
+
+import flash.utils.*;
+
+internal class Resource
+{
+	public var data:ByteArray;
+	public var parser:ParserBase;
+	
+	public function Resource(data:ByteArray, parser:ParserBase)
+	{
+		this.data = data;
+		this.parser = parser;
 	}
 }
