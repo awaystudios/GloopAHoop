@@ -6,6 +6,7 @@ package com.awaystudios.gloopahoop.level
 	
 	import away3d.containers.*;
 	import away3d.core.base.*;
+	import away3d.core.pick.*;
 	import away3d.entities.*;
 	import away3d.events.*;
 	import away3d.library.assets.*;
@@ -281,6 +282,8 @@ package com.awaystudios.gloopahoop.level
 					mat = SinglePassMaterialBase(mesh.material);
 					mat.repeat = true;
 					mat.specular = 0.3;
+					
+					mesh.pickingCollider = PickingColliderType.AS3_BEST_HIT;
 					
 					_level.splattableMeshes.push(mesh);
 				}

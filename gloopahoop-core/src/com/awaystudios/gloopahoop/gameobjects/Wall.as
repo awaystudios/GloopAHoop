@@ -22,7 +22,9 @@ package com.awaystudios.gloopahoop.gameobjects
 			if(!_physics) _physics = new WallPhysicsComponent(this, offsetX, offsetY, width, height);
 			_physics.x = worldX;
 			_physics.y = worldY;
-
+			_physics.enableReportBeginContact();
+			_physics.enableReportEndContact();
+			
 			if (GameSettings.SHOW_COLLISION_WALLS){
 				var material:ColorMaterial = new ColorMaterial(debugColor1);
 				_meshComponent = new MeshComponent();
